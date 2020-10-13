@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVPFramework_Controls", "MVPFramework_Controls\MVPFramework_Controls.csproj", "{83514085-43E9-4867-8FD1-DD64F47F7A0C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVPControls", "MVPControls\MVPControls.csproj", "{83514085-43E9-4867-8FD1-DD64F47F7A0C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
