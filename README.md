@@ -8,8 +8,9 @@
 
 ### Getting Started
 Nuget:
-1. 添加Nuget地址, 同MVPFramework地址一样
-2. 在【浏览】页签下可找到MVPControls
+```
+nuget Install-Package MVPControls -Version 2020.10.1
+```
 
 github  
 1. clone 项目
