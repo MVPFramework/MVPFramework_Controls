@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{83514085-43E9-4867-8FD1-DD64F47F7A0C}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>MVPControls</RootNamespace>
     <AssemblyName>MVPControls</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ActiproSoftware.Bars.WinForms, Version=20.1.402.0, Culture=neutral, PublicKeyToken=c27e062d3c1a4763, processorArchitecture=MSIL" />
     <Reference Include="ActiproSoftware.Shared.WinForms, Version=20.1.402.0, Culture=neutral, PublicKeyToken=c27e062d3c1a4763" />
@@ -51,13 +54,6 @@
     <Compile Include="Controls\Btn\TextButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="TestControlsWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TestControlsWindow.Designer.cs">
-      <DependentUpon>TestControlsWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\Btn\TextButton.resx">
       <DependentUpon>TextButton.cs</DependentUpon>
@@ -72,9 +68,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="TestControlsWindow.resx">
-      <DependentUpon>TestControlsWindow.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -85,18 +78,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Resources\SourceHanSansCN-Normal.ttf" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\blueBtn_dis.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\blueBtn_dwn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\blueBtn_nml.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\blueBtn_ovr.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

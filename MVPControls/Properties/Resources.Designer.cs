@@ -61,46 +61,6 @@ namespace MVPControls.Properties {
         }
         
         /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap blueBtn_dis {
-            get {
-                object obj = ResourceManager.GetObject("blueBtn_dis", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap blueBtn_dwn {
-            get {
-                object obj = ResourceManager.GetObject("blueBtn_dwn", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap blueBtn_nml {
-            get {
-                object obj = ResourceManager.GetObject("blueBtn_nml", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
-        /// </summary>
-        internal static System.Drawing.Bitmap blueBtn_ovr {
-            get {
-                object obj = ResourceManager.GetObject("blueBtn_ovr", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   查找 System.Byte[] 类型的本地化资源。
         /// </summary>
         internal static byte[] SourceHanSansCN_Normal {
