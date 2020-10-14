@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{83514085-43E9-4867-8FD1-DD64F47F7A0C}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>MVPControls</RootNamespace>
-    <AssemblyName>MVPControls</AssemblyName>
+    <ProjectGuid>{459DF73B-2B5F-435C-BB95-726BDFD19752}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MVPControlsTest</RootNamespace>
+    <AssemblyName>MVPControlsTest</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,12 +31,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ActiproSoftware.Bars.WinForms, Version=20.1.402.0, Culture=neutral, PublicKeyToken=c27e062d3c1a4763, processorArchitecture=MSIL" />
-    <Reference Include="ActiproSoftware.Shared.WinForms, Version=20.1.402.0, Culture=neutral, PublicKeyToken=c27e062d3c1a4763" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,18 +44,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\Controls\CommonDef.cs" />
-    <Compile Include="Common\Font\FontManager.cs" />
-    <Compile Include="Common\Win32\Win32.cs" />
-    <Compile Include="Controls\Btn\TextButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\Form\MVPForm.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Controls\Btn\TextButton.resx">
-      <DependentUpon>TextButton.cs</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -81,7 +74,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Resources\SourceHanSansCN-Normal.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MVPControls\MVPControls.csproj">
+      <Project>{83514085-43e9-4867-8fd1-dd64f47f7a0c}</Project>
+      <Name>MVPControls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\test.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

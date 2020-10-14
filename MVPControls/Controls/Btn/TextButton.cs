@@ -1,13 +1,11 @@
-﻿using MVPControls.Win32;
-using MVPControls.Properties;
+﻿using MVPControls.Properties;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.Windows.Forms;
-using MVPControls;
 
-namespace MVPFramework.Control
+namespace MVPControls
 {
     /// <summary>
     /// 按钮状态
