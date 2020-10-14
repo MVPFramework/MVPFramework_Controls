@@ -6,6 +6,8 @@
 | --------------- | ------- |-------|
 | MVPForm | success |未发布|
 | TextButton | success | 已发布|
+| MLabel | success | 未发布|
+| ClickableLabel | success | 未发布|
 
 ### 组件展示
 #### MVPForm
