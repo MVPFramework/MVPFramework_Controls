@@ -58,6 +58,12 @@
     <Compile Include="Controls\Form\MVPForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Controls\Label\ClickableLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Label\MLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\Btn\TextButton.resx">
       <DependentUpon>TextButton.cs</DependentUpon>

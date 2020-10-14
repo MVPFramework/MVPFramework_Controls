@@ -133,3 +133,5 @@ UpgradeLog*.htm
 nuget.exe
 *.nupkg
 *.nuspec
+
+MVPControlsTest/

@@ -15,6 +15,15 @@ namespace MVPControls
         OUT
     }
 
+    /// <summary>
+    /// 字体类型
+    /// </summary>
+    public enum FontType
+    {
+        System = 1,
+        CustomFont = 2,
+    }
+
     public class CommonDef
     {
         

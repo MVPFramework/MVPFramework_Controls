@@ -10,15 +10,6 @@ using System.Runtime.InteropServices;
 namespace MVPControls
 {
     /// <summary>
-    /// 字体类型
-    /// </summary>
-    public enum FontType
-    {
-        System = 1, 
-        CustomFont = 2,
-    }
-
-    /// <summary>
     /// 处理字体
     /// </summary>
     public class FontManager
