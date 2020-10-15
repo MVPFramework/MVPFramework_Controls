@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace MVPControls
 {
-    public class MVPForm:Form
+    public class MForm:Form
     {
         [Browsable(false)]
         public MouseState MouseState { get; set; }
@@ -23,6 +23,21 @@ namespace MVPControls
             }
         }
 
+        public override Image BackgroundImage
+        {
+            get
+            {
+                return base.BackgroundImage;
+            }
+            set
+            {
+                base.BackgroundImage = value;
+                Size = BackgroundImage.Size;
+                ClientSize = BackgroundImage.Size;
+                Refresh();
+            }
+        }
+
         private readonly Cursor[] _resizeCursors = { Cursors.SizeNESW, Cursors.SizeWE, Cursors.SizeNWSE, Cursors.SizeWE, Cursors.SizeNS };
         private bool _leftMouseDown;
         private Point _preMousePos;// 鼠标在控件上前一帧的位置
@@ -36,7 +51,7 @@ namespace MVPControls
             get => _maximized;set => _maximized = value;
         }
 
-        public MVPForm()
+        public MForm()
         {
             FormBorderStyle = FormBorderStyle.None;
             DoubleBuffered = true;
@@ -57,11 +72,12 @@ namespace MVPControls
             g.Clear(Color.White);
 
             //Draw backgroundimage
-            // TODO
             if (BackgroundImage != null)
             {
                 g.DrawImage(BackgroundImage, ClientRectangle);
             }
+
+
 
             // Determine whether or not we even should be drawing the buttons.
             // TODO

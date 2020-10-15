@@ -11,7 +11,7 @@ namespace MVPControls
     /// <summary>
     /// 可以点击的Label
     /// </summary>
-    public class ClickableLabel:Label
+    public class MClickableLabel:Label
     {
         /// <summary>
         /// 文本显示的正常颜色

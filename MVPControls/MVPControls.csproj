@@ -52,21 +52,21 @@
     <Compile Include="Common\Controls\CommonDef.cs" />
     <Compile Include="Common\Font\FontManager.cs" />
     <Compile Include="Common\Win32\Win32.cs" />
-    <Compile Include="Controls\Btn\TextButton.cs">
+    <Compile Include="Controls\Btn\MTextButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\Form\MVPForm.cs">
+    <Compile Include="Controls\Form\MForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controls\Label\ClickableLabel.cs">
+    <Compile Include="Controls\Label\MClickableLabel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\Label\MLabel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Controls\Btn\TextButton.resx">
-      <DependentUpon>TextButton.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Btn\MTextButton.resx">
+      <DependentUpon>MTextButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

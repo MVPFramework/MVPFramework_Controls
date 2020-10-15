@@ -22,28 +22,22 @@ namespace MVPControls
     /// MVPFramework TextButton控件
     /// </summary>
     [ToolboxItem(true)]
-    public class TextButton : Button
+    public class MTextButton : Button
     {
         private FontType _fontType = FontType.System;
 
-        public TextButton()
+        protected override void OnCreateControl()
         {
-            Status = ButtonStatus.Normal;
-            Font = new Font(FontManager.LoadFont(Resources.SourceHanSansCN_Normal), 12f);
+            base.OnCreateControl();
+            if (UseFontType == FontType.CustomFont && !string.IsNullOrEmpty(_customFontName))
+            {
+                var font = FontManager.GetFont(_customFontName);
+                if (font != null)
+                {
+                    Font = new Font(font, Font.Size);
+                }
+            }
         }
-
-        /// <summary>
-        /// 自定字体名, 如果启用此属性, UseCustomFont 必须设置为True
-        /// 通常, 会将自定义字体放在Resources.resx文件中
-        /// </summary>
-        [Category("自定义字体")]
-        public string CustomFontName { get; set; }
-
-        /// <summary>
-        /// 自定义字体大小,如果启用此属性, UseCustomFont 必须设置为True
-        /// </summary>
-        [Category("自定义字体")]
-        public float CustomFontSize { get; set; }
 
         /// <summary>
         /// 是否使用自定义字体
@@ -58,7 +52,57 @@ namespace MVPControls
             }
             set
             {
-                _fontType = value;
+                if (_fontType != value)
+                {
+                    _fontType = value;
+                }
+                if (_fontType == FontType.CustomFont && !string.IsNullOrEmpty(_customFontName))
+                {
+                    var font = FontManager.GetFont(_customFontName);
+                    if (font != null)
+                    {
+                        Font = new Font(font, Font.Size);
+                        Refresh();
+                    }
+                    else
+                    {
+                        _fontType = FontType.System;
+                        MessageBox.Show(_customFontName + " 字体不存在,请检查!");
+                    }
+                }
+
+            }
+        }
+
+        /// <summary>
+        /// 自定字体名, 使用此属性, 需要将FontType设置为CustomFont
+        /// 通常, 会将自定义字体放在Resources.resx文件中
+        /// </summary>
+        private string _customFontName = string.Empty;
+        [Category("自定义字体")]
+        public string CustomFontName
+        {
+            get { return _customFontName; }
+            set
+            {
+                if (_customFontName != value && !string.IsNullOrEmpty(value))
+                {
+                    _customFontName = value;
+                    if (_fontType == FontType.CustomFont)
+                    {
+                        var font = FontManager.GetFont(_customFontName);
+                        if (font != null)
+                        {
+                            Font = new Font(font, Font.Size);
+                            Refresh();
+                        }
+                        else
+                        {
+                            _fontType = FontType.System;
+                        }
+                    }
+                    
+                }
             }
         }
 
@@ -135,6 +179,8 @@ namespace MVPControls
             set
             {
                 _normalImage = value;
+                Size = _normalImage.Size;
+                ClientSize = _normalImage.Size;
                 Invalidate();
             }
         }
@@ -173,11 +219,16 @@ namespace MVPControls
                 base.Text = value;
                 switch (_fontType)
                 {
-                    case FontType.System:
-                        Font = new System.Drawing.Font(Font.Name, Font.Size);
-                        break;
                     case FontType.CustomFont:
-                        Font = new Font(FontManager.GetFont(CustomFontName), CustomFontSize);
+                        var font = FontManager.GetFont(_customFontName);
+                        if (font != null)
+                        {
+                            Font = new Font(font, Font.Size);
+                        }
+                        else
+                        {
+                            _fontType = FontType.System;
+                        }
                         break;
                 }
                 Invalidate();
@@ -221,34 +272,30 @@ namespace MVPControls
             }
 
             //Text
-            var textRect = ClientRectangle;
-
-            // 其实这里可以在上面做一个字体缓存, 这里就先做一下简单验证
             switch (_fontType)
             {
-                case FontType.System:
-                    if (Font.Name == null || Font.Size == 0f)
-                    {
-                        MessageBox.Show("请先设置字体的名字和大小");
-                        return;
-                    }
-                    Font = new System.Drawing.Font(Font.Name, Font.Size);
-                    break;
                 case FontType.CustomFont:
-                    if (CustomFontName == null || CustomFontSize == 0f)
+                    if (string.IsNullOrEmpty(_customFontName))
                     {
-                        MessageBox.Show("请先设置字体的名字和大小");
+                        MessageBox.Show("请确定TextButton使用的字体名!");
                         return;
                     }
-                    Font = new Font(FontManager.GetFont(CustomFontName), CustomFontSize);
+                    var font = FontManager.GetFont(_customFontName);
+                    if (font != null)
+                    {
+                        Font = new Font(font, Font.Size);
+                    }
                     break;
             }
 
+            var fontSize = g.MeasureString(Text, Font);
+            var textRect = new Rectangle(ClientRectangle.Location, new Size(ClientRectangle.Width, ClientRectangle.Height + (int)(fontSize.Height/2 * .9f)));
+
             // 绘制文本
             g.DrawString(
-                Text.ToUpper(),
+                Text,
                 Font,
-                new SolidBrush(Color.FromArgb(255, 0, 0, 0)),
+                new SolidBrush(ForeColor),
                 textRect,
                 new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center });
         }
