@@ -58,6 +58,9 @@
     <Compile Include="Controls\Form\MForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Controls\Image\MNineImage.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\Label\MClickableLabel.cs">
       <SubType>Component</SubType>
     </Compile>

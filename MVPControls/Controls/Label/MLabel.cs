@@ -83,7 +83,15 @@ namespace MVPControls
             base.OnCreateControl();
             if (UseFontType == FontType.CustomFont && !string.IsNullOrEmpty(_customFontName))
             {
-                Font = new Font(FontManager.GetFont(_customFontName), Font.Size);
+                var font = FontManager.GetFont(_customFontName);
+                if (font != null)
+                {
+                    Font = new Font(font, Font.Size);
+                }
+                else
+                {
+                    _fontType = FontType.System;
+                }
             }
             BackColor = Color.Transparent;
         }
