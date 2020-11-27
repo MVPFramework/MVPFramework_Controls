@@ -64,7 +64,16 @@
     <Compile Include="Controls\Label\MClickableLabel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\Label\MHyperlinkLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Label\MInputField.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\Label\MLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ProgressBar\MProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

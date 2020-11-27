@@ -48,6 +48,9 @@ namespace MVPControls
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
 
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern IntPtr SendMessage(IntPtr hWnd, int msg, int wParam, string lParam);
+
         /// <summary>
         /// 为当前的应用程序释放鼠标捕获
         /// </summary>

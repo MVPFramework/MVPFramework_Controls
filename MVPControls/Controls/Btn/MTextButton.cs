@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
+using System.IO;
 using System.Windows.Forms;
 
 namespace MVPControls
@@ -235,6 +236,8 @@ namespace MVPControls
             }
         }
 
+        //private Image tempShowButtonImg = null;
+
         /// <summary>
         /// 按钮的绘制函数
         /// </summary>
@@ -289,7 +292,7 @@ namespace MVPControls
             }
 
             var fontSize = g.MeasureString(Text, Font);
-            var textRect = new Rectangle(ClientRectangle.Location, new Size(ClientRectangle.Width, ClientRectangle.Height + (int)(fontSize.Height/2 * .9f)));
+            var textRect = new Rectangle(ClientRectangle.Location, new Size(ClientRectangle.Width, ClientRectangle.Height + (int)(fontSize.Height / 2 * .9f)));
 
             // 绘制文本
             g.DrawString(
@@ -307,6 +310,7 @@ namespace MVPControls
         protected override void WndProc(ref Message m)
         {
             base.WndProc(ref m);
+            if (DesignMode || IsDisposed) return;
             if (Status == ButtonStatus.Disable)
             { // 禁用状态 直接return
                 return;

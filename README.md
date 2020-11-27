@@ -4,10 +4,10 @@
 ## 组件列表
 |       组件       |  编译状态   | 发布状态|
 | --------------- | ------- |-------|
-| MVPForm | success |未发布|
-| TextButton | success | 已发布|
-| MLabel | success | 未发布|
-| ClickableLabel | success | 未发布|
+| MForm | success |已发布|
+| MTextButton | success | 已发布|
+| MLabel | success | 已发布|
+| MClickableLabel | success | 已发布|
 
 ### 组件展示
 #### MVPForm
@@ -28,3 +28,8 @@ github
 git clone git@github.com:MVPFramework/MVPFramework_Controls.git
 ```
 2. 编译项目，获取DLL引用即可
+
+
+git filter-branch -f --prune-empty --index-filter 'git rm -rf --cached --ignore-unmatch other/TT.7z' --tag-name-filter cat -- --all
+<file.src>为该文件路径
+
