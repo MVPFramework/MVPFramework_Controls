@@ -274,23 +274,6 @@ namespace MVPControls
                 g.DrawImage(tempShowButtonImg, ClientRectangle);
             }
 
-            //Text
-            switch (_fontType)
-            {
-                case FontType.CustomFont:
-                    if (string.IsNullOrEmpty(_customFontName))
-                    {
-                        MessageBox.Show("请确定TextButton使用的字体名!");
-                        return;
-                    }
-                    var font = FontManager.GetFont(_customFontName);
-                    if (font != null)
-                    {
-                        Font = new Font(font, Font.Size);
-                    }
-                    break;
-            }
-
             var fontSize = g.MeasureString(Text, Font);
             var textRect = new Rectangle(ClientRectangle.Location, new Size(ClientRectangle.Width, ClientRectangle.Height + (int)(fontSize.Height / 2 * .9f)));
 
