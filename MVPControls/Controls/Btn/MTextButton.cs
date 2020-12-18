@@ -5,6 +5,7 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.IO;
 using System.Windows.Forms;
+using MVPControls.Interop;
 
 namespace MVPControls
 {
@@ -275,7 +276,7 @@ namespace MVPControls
             }
 
             var fontSize = g.MeasureString(Text, Font);
-            var textRect = new Rectangle(ClientRectangle.Location, new Size(ClientRectangle.Width, ClientRectangle.Height + (int)(fontSize.Height / 2 * .9f)));
+            var textRect = new Rectangle(ClientRectangle.Location, new System.Drawing.Size(ClientRectangle.Width, ClientRectangle.Height + (int)(fontSize.Height / 2 * .9f)));
 
             // 绘制文本
             g.DrawString(

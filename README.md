@@ -3,11 +3,15 @@
 
 ## 组件列表
 |       组件       |  编译状态   | 发布状态|
-| --------------- | ------- |-------|
-| MForm | success |已发布|
-| MTextButton | success | 已发布|
-| MLabel | success | 已发布|
-| MClickableLabel | success | 已发布|
+| --------------- | ------- |-------|-------|
+| MForm | success |已发布|窗体组件|
+| MTextButton | success | 已发布|文字按钮|
+| MClickableLabel | success | 已发布|可点击文字|
+| MHyperlinkLabel | success | 已发布|超链接|
+| MInputField | success | 已发布|输入文本|
+| MLabel | success | 已发布|普通文本|
+| MProgressBar | success | 已发布|水平进度条|
+| MNineImage | success | 已发布|九宫图|
 
 ### 组件展示
 #### MVPForm
@@ -15,6 +19,19 @@
 
 #### TextButton
 ![](README_images/textbutton.png)
+
+#### MClickableLabel
+
+#### MHyperlinkLabel
+
+#### MInputField
+
+#### MLabel
+
+#### MProgressBar
+
+#### MNineImage
+
 
 ### Getting Started
 Nuget:
